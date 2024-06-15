@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6h%xul(&r!f_&gs3+%xe!2hbp@^apik11)d%eddd=cf%_71(dy'
+SECRET_KEY = 'django-insecure-&-gpy3che6xmn%%3ec6!h0fm5ema--!8s32ba-sh%a=yt_6p3('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'project_backend'
+    'guide_db',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from decouple import config
+
+FIREBASE_CONFIG = {
+    "apiKey": config('FIREBASE_API_KEY'),
+    "authDomain": config('FIREBASE_AUTH_DOMAIN'),
+    "projectId": config('FIREBASE_PROJECT_ID'),
+    "storageBucket": config('FIREBASE_STORAGE_BUCKET'),
+    "messagingSenderId": config('FIREBASE_MESSAGING_SENDER_ID'),
+    "appId": config('FIREBASE_APP_ID'),
+    "measurementId": config('FIREBASE_MEASUREMENT_ID'),
+    "databaseURL": config('FIREBASE_DATABASE_URL'),
+}

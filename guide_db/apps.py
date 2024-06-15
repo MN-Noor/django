@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ProjectBackendConfig(AppConfig):
+class GuideDbConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'project_backend'
+    name = 'guide_db'
