@@ -1,1 +1,4 @@
 .env
+guide_db/__pycache__
+backend/__pycache_
+migrations/__pycache__
