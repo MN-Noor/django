@@ -1,0 +1,4 @@
+Django==5.0.6
+djangorestframework==3.15.1
+Pyrebase4==3.0.27
+python-decouple==3.8
