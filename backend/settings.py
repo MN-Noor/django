@@ -48,11 +48,13 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CSRF_COOKIE_SECURE = True  
+CSRF_COOKIE_HTTPONLY = True 
 
 CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = (
@@ -144,7 +146,7 @@ FIREBASE_CONFIG = {
     "measurementId": config('FIREBASE_MEASUREMENT_ID'),
     "databaseURL": config('FIREBASE_DATABASE_URL'),
 }
-print(FIREBASE_CONFIG["appId"])
+
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
