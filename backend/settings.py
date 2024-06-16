@@ -136,6 +136,7 @@ FIREBASE_CONFIG = {
     "measurementId": config('FIREBASE_MEASUREMENT_ID'),
     "databaseURL": config('FIREBASE_DATABASE_URL'),
 }
+print(FIREBASE_CONFIG["appId"])
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
