@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&-gpy3che6xmn%%3ec6!h0fm5ema--!8s32ba-sh%a=yt_6p3(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['guidebackend-production.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1','guidebackend-production.up.railway.app','localhost']
 
 
 # Application definition
@@ -116,8 +116,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+import os
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -135,4 +137,14 @@ FIREBASE_CONFIG = {
     "appId": config('FIREBASE_APP_ID'),
     "measurementId": config('FIREBASE_MEASUREMENT_ID'),
     "databaseURL": config('FIREBASE_DATABASE_URL'),
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
 }
